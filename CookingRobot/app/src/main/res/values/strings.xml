@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Arman\'s Cooking Robot</string>
+
+    <!-- Home Page -->
+    <string name="welcome_message">Welcome to Deb\'s Cooking Robot</string>
+    <string name="choose_menu_prompt">Choose your cooking menu from the following</string>
+    <string name="menu_hotchpotch">Hotchpotch</string>
+    <string name="menu_noodles">Noodles</string>
+    <string name="menu_vegetables">Vegetables</string>
+    <string name="menu_fried_rice">Fried Rice</string> <!-- I corrected the 4th button based on the image -->
+    <string name="exit_button">Exit</string>
+
+    <!-- Recipe Page -->
+    <string name="preparation_title_template">%s Preparation</string>
+    <string name="enter_persons_prompt">Enter number of person</string>
+    <string name="table_header_sl">Sl.</string>
+    <string name="table_header_ingredient">Ingredient</string>
+    <string name="table_header_amount">Amount</string>
+    <string name="table_header_unit">Unit</string>
+    <string name="chefs_tip_title">Chef\'s Tips</string>
+    <string name="back_button">Back</string>
+    <string name="next_button">Next</string>
+
+</resources>

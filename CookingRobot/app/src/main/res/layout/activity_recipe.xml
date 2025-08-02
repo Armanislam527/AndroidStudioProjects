@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        tools:context=".RecipeActivity">
+
+        <!-- Title of the recipe, e.g., "Hotchpotch Preparation" -->
+        <TextView
+            android:id="@+id/recipe_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Hotchpotch Preparation" />
+
+        <!-- CardView for the person count input -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/person_input_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:cardCornerRadius="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recipe_title">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/enter_persons_prompt"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/person_count_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:hint="1"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:background="@drawable/edit_text_background"
+                    android:padding="12dp"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- CardView for the ingredients table -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/ingredients_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/person_input_card">
+
+            <!-- TableLayout to display ingredients -->
+            <TableLayout
+                android:id="@+id/ingredients_table"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:stretchColumns="1"> <!-- This makes the 'Ingredient' column stretch -->
+
+                <!-- Table Header Row -->
+                <TableRow android:paddingBottom="8dp">
+                    <TextView android:text="@string/table_header_sl" android:textStyle="bold" android:paddingEnd="8dp"/>
+                    <TextView android:text="@string/table_header_ingredient" android:textStyle="bold" />
+                    <TextView android:text="@string/table_header_amount" android:textStyle="bold" android:gravity="end" />
+                    <TextView android:text="@string/table_header_unit" android:textStyle="bold" android:paddingStart="8dp" />
+                </TableRow>
+
+                <!-- Ingredient rows will be added here dynamically from Java code -->
+
+            </TableLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Chef's Tips Section -->
+        <TextView
+            android:id="@+id/chefs_tip_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/chefs_tip_title"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ingredients_card" />
+
+        <TextView
+            android:id="@+id/chefs_tip_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Tips will be shown here..."
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chefs_tip_title" />
+
+        <!-- Back Button -->
+        <Button
+            android:id="@+id/button_back"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/back_button"
+            app:backgroundTint="@color/white"
+            android:textColor="@color/button_text_color"
+            app:layout_constraintEnd_toStartOf="@+id/button_next"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chefs_tip_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Next Button -->
+        <Button
+            android:id="@+id/button_next"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="8dp"
+            android:text="@string/next_button"
+            app:backgroundTint="@color/white"
+            android:textColor="@color/button_text_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button_back"
+            app:layout_constraintTop_toTopOf="@+id/button_back" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
