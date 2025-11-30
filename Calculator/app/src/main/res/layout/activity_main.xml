@@ -1,19 +1,213 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:padding="16dp">
 
+    <!-- Display -->
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/tvDisplay"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="#f0f0f0"
+        android:padding="16dp"
+        android:text="0"
+        android:textAlignment="viewEnd"
+        android:textSize="32sp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Memory Functions Row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnMC"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="MC" />
+
+        <Button
+            android:id="@+id/btnMR"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="MR" />
+
+        <Button
+            android:id="@+id/btnMPlus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="M+" />
+
+        <Button
+            android:id="@+id/btnMMinus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="M-" />
+    </LinearLayout>
+
+    <!-- Scientific Functions Row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnSin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="sin" />
+
+        <Button
+            android:id="@+id/btnCos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="cos" />
+
+        <Button
+            android:id="@+id/btnTan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="tan" />
+
+        <Button
+            android:id="@+id/btnLog"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="log" />
+
+        <Button
+            android:id="@+id/btnLn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ln" />
+    </LinearLayout>
+
+    <!-- Number Pad and Operations -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:columnCount="5">
+
+        <!-- Row 1 -->
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_columnSpan="2"
+            android:layout_gravity="fill"
+            android:text="C" />
+
+        <Button
+            android:id="@+id/btnDel"
+            android:text="DEL" />
+
+        <Button
+            android:id="@+id/btnDivide"
+            android:text="/" />
+
+        <Button
+            android:id="@+id/btnPower"
+            android:text="^" />
+
+        <!-- Row 2 -->
+        <Button
+            android:id="@+id/btn7"
+            android:text="7" />
+
+        <Button
+            android:id="@+id/btn8"
+            android:text="8" />
+
+        <Button
+            android:id="@+id/btn9"
+            android:text="9" />
+
+        <Button
+            android:id="@+id/btnMultiply"
+            android:text="*" />
+
+        <Button
+            android:id="@+id/btnSqrt"
+            android:text="√" />
+
+        <!-- Row 3 -->
+        <Button
+            android:id="@+id/btn4"
+            android:text="4" />
+
+        <Button
+            android:id="@+id/btn5"
+            android:text="5" />
+
+        <Button
+            android:id="@+id/btn6"
+            android:text="6" />
+
+        <Button
+            android:id="@+id/btnSubtract"
+            android:text="-" />
+
+        <Button
+            android:id="@+id/btnPi"
+            android:text="π" />
+
+        <!-- Row 4 -->
+        <Button
+            android:id="@+id/btn1"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/btn2"
+            android:text="2" />
+
+        <Button
+            android:id="@+id/btn3"
+            android:text="3" />
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:text="+" />
+
+        <Button
+            android:id="@+id/btnE"
+            android:text="e" />
+
+        <!-- Row 5 -->
+        <Button
+            android:id="@+id/btn0"
+            android:layout_columnSpan="2"
+            android:layout_gravity="fill"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/btnDot"
+            android:text="." />
+
+        <Button
+            android:id="@+id/btnEquals"
+            android:layout_rowSpan="2"
+            android:layout_gravity="fill_vertical"
+            android:text="=" />
+
+        <Button
+            android:id="@+id/btnParen"
+            android:text="()" />
+
+        <!-- Row 6 -->
+        <Button
+            android:id="@+id/btnConvert"
+            android:layout_columnSpan="4"
+            android:layout_gravity="fill"
+            android:text="UNIT CONVERTER" />
+    </GridLayout>
+</LinearLayout>
